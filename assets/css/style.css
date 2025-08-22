@@ -9,9 +9,13 @@ body {
   padding: 0;
 }
 
+body.peter-page {
+  background-color: #FCFBE5;
+}
+
 /* Header */
 header {
-  font-family: 'Fredoka One', sans-serif;
+  font-family: 'Nunito', sans-serif;
   background-color: #1E90FF; /* Dodger Blue */
   padding: 20px;
   text-align: center;
