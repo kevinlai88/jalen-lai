@@ -6,7 +6,7 @@ permalink: /thankspeter/
 <head>
   <meta content="width=device-width,minimum-scale=1" name="viewport">
   <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body class="peter-page">
 <style>
