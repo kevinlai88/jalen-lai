@@ -3,6 +3,12 @@ layout: default
 title: Thanks Peter & Sara
 permalink: /thankspeter/
 ---
+<head>
+  <meta content="width=device-width,minimum-scale=1" name="viewport">
+  <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+
 <style>
 h1{
   font-family: 'Patrick Hand', cursive;
@@ -29,12 +35,6 @@ h5 {
 }
 </style>
 
-<head>
-  <meta content="width=device-width,minimum-scale=1" name="viewport">
-  <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css">
-  <title>Jalen 🎈</title>
-</head>
 <body>
   <h1>
     Happy<br>birthday, Jalen!
