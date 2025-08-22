@@ -1,4 +1,23 @@
-title: Jalen Lai's Fun Site
-baseurl: "" 
+title: "Jalen Lai"
+description: "Jalen's fun website 🎉"
+baseurl: "" # leave empty since you're using a custom domain
 url: "https://jalenlai.com"
-theme: minima
+
+# Tell Jekyll to publish pages inside _pages
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+
+# Default settings for pages
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: default
+
+# Markdown + theme settings
+markdown: kramdown
+theme: minima   # (you can override with your own includes/layouts)
+permalink: pretty
