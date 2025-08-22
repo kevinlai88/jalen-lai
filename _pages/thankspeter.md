@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta content="width=device-width,minimum-scale=1" name="viewport">
-  <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css">
-  <title>Jalen 🎈</title>
-</head>
+---
+layout: default
+title: Thanks Peter & Sara
+permalink: /thankspeter/
+---
+<link rel="stylesheet" href="/assets/css/thankspeter.css">
 <body>
   <h1>
     Happy<br>birthday, Jalen!
