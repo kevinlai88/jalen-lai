@@ -9,12 +9,13 @@ permalink: /mybirthday/
 <button class="bounce" onclick="alert('🎉 Happy Birthday! 🎉')">Celebrate!</button>
 
 <div class="view-invitation__event-info view-invitation__event-info__as-grid" id="event-details"><p class="view-invitation__event-title header2" data-qa-id="event-title" style="color: rgb(16, 27, 33);">Jalen's 8th Birthday</p><div class="view-invitation__event-info__column"><div><p class="view-invitation__label label2" data-qa-id="when">When</p>
-<div class="date-calendar__wrapper"><p class="view-invitation__details-module__section-body paragraph1" data-qa-id="event-date-time-string" data-qa-value="Sunday, October 5, 2025 11:15 AM PT"><span class="view-invitation__details-module__section-body paragraph1" as="span" style="color: rgb(16, 27, 33);">Sunday, October 5, 2025</span><br>11:15 AM PT</p>
+<div class="date-calendar__wrapper"><p class="view-invitation__details-module__section-body paragraph1" data-qa-id="event-date-time-string" data-qa-value="Sunday, October 5, 2025 11:15 AM PT"><span class="view-invitation__details-module__section-body paragraph1" as="span" style="color: rgb(16, 27, 33);">Sunday, October 5, 2025<br>11:15 AM PT</span></p>
 </div>
 </div>
 
 <div class="view-invitation__location-block"><div>
-<p class="view-invitation__label label2">Where</p><p class="view-invitation__details-module__section-body paragraph1"><div><div>Traverse Fitness</div>1 W Barrett Ave<br>Richmond, CA, 94801</div></p></div>
+<p class="view-invitation__label label2">Where</p><p class="view-invitation__details-module__section-body paragraph1"><div>
+<div>Traverse Fitness</div>1 W Barrett Ave<br>Richmond, CA, 94801</div></p></div>
 <a href="https://maps.app.goo.gl/urud93mwD1zVAdCN9" target="_blank"> Google Maps Link </a>
 </div></div><div class="view-invitation__host-message-wrapper"><hr class="view-invitation__details-divider" style="width: 100%;"><div>
 
