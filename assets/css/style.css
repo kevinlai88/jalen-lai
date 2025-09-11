@@ -110,15 +110,16 @@ button.bounce {
 
 .video-hero-container {
   position: relative;
-  display: inline-block; /* or block with defined width */
-  width: 100%; /* or desired width, e.g. 600px */
-  max-width: 800px; /* optional cap */
+  width: 500px;   /* match your video size */
+  height: 680px;
   overflow: hidden;
+  border-radius: 12px; /* optional, for rounded corners */
 }
 
-.video-hero-iframe {
+.video-hero-video {
   width: 100%;
-  height: auto; /* or a fixed aspect ratio, e.g. 315px height with width 560px */
+  height: 100%;
+  object-fit: cover; /* keeps video nicely cropped */
   display: block;
 }
 
@@ -128,19 +129,16 @@ button.bounce {
   left: 50%;
   transform: translate(-50%, -50%);
   
-  /* Styles for the button look */
-  background: rgba(0, 0, 0, 0.6); /* semi-transparent dark background */
+  background: rgba(0, 0, 0, 0.6);
   color: white;
   border: none;
-  border-radius: 50%; /* makes it round */
+  border-radius: 50%;
   width: 80px;
   height: 80px;
-  font-size: 36px;
+  font-size: 32px;
   cursor: pointer;
   
-  /* Optional styles */
   display: flex;
   align-items: center;
   justify-content: center;
-  outline: none;
 }
