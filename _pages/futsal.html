@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>5v5 Futsal Plays</title>
+<meta name="color-scheme" content="light dark">
+<style>
+:root{--bg:#f6f7f4;--court:#e4ece6;--line:#8a968d;--ink:#1d2420;--muted:#5f6b64;--card:#fff;--bd:#cdd5cf;--acc:#0f6e56;--accbg:#d5ece5;
+--tf:#bfe3d9;--ts:#0f6e56;--tt:#04342c;--gf:#e0e0da;--gs:#5f5e5a;--gt:#2c2c2a;--pf:#e0dcf7;--ps:#534ab7;--pt:#26215c;--pass:#ba7517;--run:#7a7971;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141815;--court:#1f2a24;--line:#4a5a50;--ink:#eef2ee;--muted:#9fb0a5;--card:#1b211d;--bd:#34423a;--acc:#5dcaa5;--accbg:#12352c;
+--tf:#0f4a3d;--ts:#5dcaa5;--tt:#c9f0e3;--gf:#3a3d39;--gs:#b4b2a9;--gt:#eee;--pf:#2e2a63;--ps:#afa9ec;--pt:#e3e0fb;--pass:#ef9f27;--run:#a3a298}}
+:root[data-theme="dark"]{--bg:#141815;--court:#1f2a24;--line:#4a5a50;--ink:#eef2ee;--muted:#9fb0a5;--card:#1b211d;--bd:#34423a;--acc:#5dcaa5;--accbg:#12352c;
+--tf:#0f4a3d;--ts:#5dcaa5;--tt:#c9f0e3;--gf:#3a3d39;--gs:#b4b2a9;--gt:#eee;--pf:#2e2a63;--ps:#afa9ec;--pt:#e3e0fb;--pass:#ef9f27;--run:#a3a298}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:520px;margin:0 auto;padding:16px 16px 28px}
+h1{font-size:22px;line-height:1.25;margin:4px 0 4px}
+.sub{color:var(--muted);font-size:14px;margin:0 0 14px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+button{font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--bd);border-radius:10px;min-height:44px;padding:0 14px;cursor:pointer}
+button:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+button.on{background:var(--accbg);border-color:var(--acc);color:var(--acc);font-weight:600}
+svg{display:block;width:100%;height:auto;border-radius:10px}
+.pl,.bl{transition:transform .7s ease}
+.pl circle{stroke-width:1.5}
+.pl text{font:600 13px system-ui,sans-serif}
+.t circle{fill:var(--tf);stroke:var(--ts)}.t text{fill:var(--tt)}
+.g circle{fill:var(--gf);stroke:var(--gs)}.g text{fill:var(--gt)}
+.s circle{fill:var(--pf);stroke:var(--ps)}.s text{fill:var(--pt)}
+.bl circle{fill:#ef9f27;stroke:#854f0b;stroke-width:1}
+.ctl{display:flex;align-items:center;gap:10px;margin-top:12px}
+.ctl button{flex:1}
+.ctl span{color:var(--muted);font-size:14px;white-space:nowrap}
+#cap{min-height:3.2em;margin:12px 0 6px}
+.key{color:var(--muted);font-size:13px;margin:0}
+@media(prefers-reduced-motion:reduce){.pl,.bl{transition:none}}
+</style>
+</head>
+<body>
+<main>
+<h1>5v5 futsal plays</h1>
+<p class="sub">Pick a play, then tap Next to step through it.</p>
+<div class="pills" id="pills"></div>
+<svg viewBox="140 0 400 530" role="img" aria-label="Top-down futsal court showing five players moving through a play">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect x="190" y="20" width="300" height="480" rx="4" fill="var(--court)" stroke="var(--line)"/>
+<line x1="190" y1="260" x2="490" y2="260" stroke="var(--line)"/>
+<circle cx="340" cy="260" r="40" fill="none" stroke="var(--line)"/>
+<path d="M250 20A90 90 0 0 0 430 20M250 500A90 90 0 0 1 430 500" fill="none" stroke="var(--line)"/>
+<rect x="320" y="12" width="40" height="8" rx="2" fill="none" stroke="var(--line)" stroke-width="2"/>
+<rect x="320" y="500" width="40" height="8" rx="2" fill="none" stroke="var(--line)" stroke-width="2"/>
+<text x="196" y="40" font-size="10.5" fill="var(--muted)">Their goal</text>
+<text x="196" y="492" font-size="10.5" fill="var(--muted)">Our goal</text>
+<g id="arrows"></g>
+<g id="pG" class="pl g" style="transform:translate(340px,470px)"><circle r="17"/><text text-anchor="middle" dominant-baseline="central">G</text></g>
+<g id="pF" class="pl t" style="transform:translate(340px,380px)"><circle r="17"/><text text-anchor="middle" dominant-baseline="central">CB</text></g>
+<g id="pL" class="pl t" style="transform:translate(250px,290px)"><circle r="17"/><text text-anchor="middle" dominant-baseline="central">LW</text></g>
+<g id="pR" class="pl t" style="transform:translate(430px,290px)"><circle r="17"/><text text-anchor="middle" dominant-baseline="central">RW</text></g>
+<g id="pP" class="pl s" style="transform:translate(340px,200px)"><circle r="17"/><text text-anchor="middle" dominant-baseline="central">S</text></g>
+<g id="ball" class="bl" style="transform:translate(359px,484px)"><circle r="6"/></g>
+</svg>
+<div class="ctl">
+<button onclick="move(-1)" aria-label="Previous step">Back</button>
+<button onclick="move(1)" aria-label="Next step">Next</button>
+<span id="stepno"></span>
+</div>
+<p id="cap" aria-live="polite"></p>
+<p class="key">G keeper, CB centerback, LW and RW wingers, S striker. Solid arrow = pass, dashed = run.</p>
+</main>
+<script>
+var plays=[
+{n:'Keeper roll-out',s:[
+{p:{G:[340,470],F:[340,380],L:[250,290],R:[430,290],P:[340,200]},b:'G',t:'Keeper has the ball. Everyone starts in the diamond.'},
+{p:{G:[340,470],F:[340,380],L:[215,330],R:[465,330],P:[340,250]},b:'F',t:'Wingers spread wide, striker checks back, keeper rolls it to the centerback.'},
+{p:{G:[340,470],F:[340,380],L:[215,300],R:[465,260],P:[340,170]},b:'L',t:'Centerback passes wide to the left winger while the striker spins toward goal.'},
+{p:{G:[340,470],F:[340,380],L:[240,240],R:[450,190],P:[340,170]},b:'P',t:'Left winger finds the striker and everyone moves up together.'}]},
+{n:'Give-and-go',s:[
+{p:{G:[340,470],F:[340,380],L:[250,270],R:[430,290],P:[340,180]},b:'L',t:'Left winger has the ball, striker is ahead and central.'},
+{p:{G:[340,470],F:[340,380],L:[235,215],R:[430,290],P:[340,180]},b:'P',t:'Pass to the striker, then sprint past into space.'},
+{p:{G:[340,470],F:[340,380],L:[225,115],R:[430,260],P:[340,180]},b:'L',t:'Striker returns it into the runner’s path. Finish.'}]},
+{n:'Third-man run',s:[
+{p:{G:[340,470],F:[340,380],L:[250,280],R:[430,280],P:[340,180]},b:'F',t:'Centerback starts the move with the ball.'},
+{p:{G:[340,470],F:[340,380],L:[250,280],R:[440,240],P:[340,180]},b:'L',t:'Pass wide to the left winger. The right winger starts a diagonal run.'},
+{p:{G:[340,470],F:[340,380],L:[250,280],R:[410,150],P:[340,180]},b:'P',t:'Left winger plays inside to the striker while the right winger keeps running.'},
+{p:{G:[340,470],F:[340,380],L:[250,200],R:[400,100],P:[340,180]},b:'R',t:'Striker slides it through to the third man. Shoot.'}]},
+{n:'Crossover',s:[
+{p:{G:[340,470],F:[340,380],L:[250,270],R:[430,270],P:[340,170]},b:'L',t:'Both wingers start wide.'},
+{p:{G:[340,470],F:[340,380],L:[420,235],R:[260,235],P:[340,170]},b:'L',t:'Wingers swap sides and the ball carrier drives across.'},
+{p:{G:[340,470],F:[340,380],L:[420,235],R:[250,160],P:[340,170]},b:'R',t:'Drop the ball to the teammate attacking the open side.'}]},
+{n:'Kick-in',s:[
+{p:{G:[340,470],F:[310,380],L:[190,310],R:[440,260],P:[320,190]},b:'L',t:'Kick-in from the touchline. Three teammates show for the ball.'},
+{p:{G:[340,470],F:[310,370],L:[190,310],R:[440,200],P:[260,290]},b:'P',t:'Striker checks to the ball and takes the short pass.'},
+{p:{G:[340,470],F:[310,370],L:[240,220],R:[440,200],P:[260,290]},b:'R',t:'One touch to the right winger, running free. Shoot.'}]}
+];
+var keys=['G','F','L','R','P'],pi=0,si=0;
+function cut(a,b,r){var dx=b[0]-a[0],dy=b[1]-a[1],d=Math.sqrt(dx*dx+dy*dy)||1;return [[a[0]+dx/d*r,a[1]+dy/d*r],[b[0]-dx/d*r,b[1]-dy/d*r]];}
+function ln(a,b,stroke,w,dash){var c=cut(a,b,20);return '<line x1="'+c[0][0]+'" y1="'+c[0][1]+'" x2="'+c[1][0]+'" y2="'+c[1][1]+'" stroke="'+stroke+'" stroke-width="'+w+'"'+(dash?' stroke-dasharray="4 4"':'')+' stroke-linecap="round" marker-end="url(#arrow)"/>';}
+function render(){
+var pl=plays[pi],st=pl.s[si],pv=si>0?pl.s[si-1]:null,h='';
+keys.forEach(function(k){document.getElementById('p'+k).style.transform='translate('+st.p[k][0]+'px,'+st.p[k][1]+'px)';
+if(pv){var a=pv.p[k],b=st.p[k];if(Math.abs(a[0]-b[0])+Math.abs(a[1]-b[1])>14)h+=ln(a,b,'var(--run)',1.5,true);}});
+if(pv&&pv.b!==st.b)h+=ln(st.p[pv.b],st.p[st.b],'var(--pass)',2.5,false);
+document.getElementById('arrows').innerHTML=h;
+var bp=st.p[st.b];document.getElementById('ball').style.transform='translate('+(bp[0]+19)+'px,'+(bp[1]+14)+'px)';
+document.getElementById('cap').textContent=st.t;
+document.getElementById('stepno').textContent='Step '+(si+1)+' of '+pl.s.length;
+var bs=document.querySelectorAll('.pill');
+for(var i=0;i<bs.length;i++)bs[i].classList.toggle('on',i===pi);
+}
+function move(d){var n=plays[pi].s.length;si=(si+d+n)%n;render();}
+function setPlay(i){pi=i;si=0;render();}
+var pe=document.getElementById('pills');
+plays.forEach(function(p,i){var b=document.createElement('button');b.className='pill';b.textContent=p.n;b.onclick=function(){setPlay(i);};pe.appendChild(b);});
+render();
+</script>
+</body>
+</html>
